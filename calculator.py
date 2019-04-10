@@ -32,3 +32,9 @@ while True:
 
     elif tokens[0] == '*':
         print(multiply(float(tokens[1]), float(tokens[2])))
+
+    elif tokens[0] == '/':
+        while tokens[2] == '0':
+            input_string = input('Second number cannot be 0. Try again. \nType your calculator command \n')
+            tokens = input_string.split(' ')
+        print(divide(float(tokens[1]), float(tokens[2])))
