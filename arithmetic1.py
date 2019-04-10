@@ -30,6 +30,7 @@ def divide(list_nums):
         div /= num
     return div
 
+
 def power(list_nums):
     """Raise num1 to the power of num and return the value."""
     pwr = list_nums[0]
@@ -38,7 +39,10 @@ def power(list_nums):
     return pwr
     
 
-def mod(num1, num2):
+def mod(list_nums):
     """Return the remainder of num / num2."""
+    md = list_nums[0]
+    for num in list_nums[1:]:
+        md %= num
+    return md
 
-    return num1 % num2
