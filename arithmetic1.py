@@ -15,10 +15,12 @@ def subtract(list_nums):
         sb -= num
     return sb
 
-def multiply(num1, num2):
+def multiply(list_nums):
     """Multiply the two inputs together."""
-
-    return num1 * num2
+    mlt = 1
+    for num in list_nums:
+        mlt *= num
+    return mlt
 
 
 def divide(num1, num2):
