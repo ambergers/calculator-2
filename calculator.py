@@ -6,28 +6,34 @@ calculator program yourself in this file.
 
 from arithmetic1 import *
 
-# # No setup
-# repeat forever:
-#     read input
-#     tokenize input
-#     if the first token is "q":
-#         quit
-#     else:
-#         decide which math function to call based on first token
-
-
-# Your code goes here
 import functools
+
+def is_valid(list):
+    if len(list) < 2:
+        print('List must have at least 2 numbers in it. Try again. \n')
+        return False
+    try:
+        num_list = [float(i) for i in list[1:]]
+        return True
+    except ValueError:
+        print('List can only have numeric values. Try again. \n')
+        return False
 
 while True:
     input_string = input('Type your calculator command \n')
     tokens = input_string.split(' ')
-    num_list = [float(i) for i in tokens[1:]]
-
+    
     if tokens[0] == 'q':
         break
 
-    elif tokens[0] == '+':
+    while is_valid(tokens) == False:
+        input_string = input('Type your calculator command \n')
+        tokens = input_string.split(' ')
+
+    num_list = [float(i) for i in tokens[1:]]
+    
+
+    if tokens[0] == '+':
         print(add(num_list))
         # print (functools.reduce(lambda x,y: x + y, numbers_float))
 
@@ -50,3 +56,4 @@ while True:
 
     elif tokens[0] == 'mod':
         print(mod(num_list))
+
